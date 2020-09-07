@@ -22,10 +22,6 @@ header {
 }
 
 /* For visual layout only */
-form {
-  border: 1px dashed red;
-}
-
 .container {
   border: 1px dashed red;
 }
@@ -39,13 +35,17 @@ form {
   padding: 1rem;
 }
 
-input:invalid {
-  border: 2px sold red;
+/* input:invalid {
+  box-shadow: 0 0 5px 1px red;
+} */
+
+abbr {
+  color: red;
 }
 
 /* Movie Table */
 .table-wrapper {
-  width: 100%;
+  width: 80%;
   margin: 1.875rem auto;
   background: #fff;
   padding: 1.25rem;
@@ -68,11 +68,7 @@ table.table th i {
   cursor: pointer;
 }
 
-table.table th:first-child {
-  width: 6.25rem;
-}
-
-table.table th:nth-child(3) {
+table.table th:nth-child(2) {
   width: 6.25rem;
 }
 
