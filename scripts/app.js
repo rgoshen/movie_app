@@ -2,6 +2,7 @@ let moviesArray = [];
 let currentId = 0;
 
 $(document).ready(function () {
+  checkForEmptyTable();
   wireHandlers();
   $("#title").focus();
 });
@@ -12,11 +13,22 @@ function wireHandlers() {
   $(".fas").on("click", sortDirection);
 }
 
+function checkForEmptyTable() {
+  if ($("tbody").children().length === 0) {
+    $(".table").toggleClass("d-none");
+  }
+}
+
 function appendNewMovie(e) {
   e.preventDefault();
 
+  $(".table").removeClass("d-none");
+
   let title = $("#title").val();
   let rating = $("#rating").val();
+
+  title = titleCase(title);
+
   let movieData = { title, rating, currentId };
 
   const movieRowToAppend = addNewRow(movieData);
@@ -27,6 +39,18 @@ function appendNewMovie(e) {
   $("tbody").append(movieRowToAppend);
   $("#new-movie-form").trigger("reset");
   $("#title").focus();
+}
+
+function checkForDuplicates() {}
+
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
 
 function addNewRow(data) {
@@ -51,11 +75,14 @@ function deleteMovie(e) {
   moviesArray.splice(indexToRemoveAt, 1);
 
   $(e.target).parents("tr").remove();
+
+  checkForEmptyTable();
 }
 
 function sortDirection(e) {
   let direction = $(e.target).hasClass("fa-caret-down") ? "down" : "up";
   let keyToSortBy = $(e.target).attr("data-sort-by");
+
   let sortedMovies = sortBy(moviesArray, keyToSortBy, direction);
 
   $("tbody").empty();
@@ -83,3 +110,22 @@ function sortBy(array, keyToSortBy, direction) {
     return 0;
   });
 }
+
+// function sortBy(array, keyToSortBy, direction) {
+//   return array.sort(function (a, b) {
+//     if (keyToSortBy === "rating") {
+//       a[keyToSortBy] = +a[keyToSortBy];
+//       b[keyToSortBy] = +b[keyToSortBy];
+//     }
+//     if (keyToSortBy === "title") {
+//       a[keyToSortBy] = a[keyToSortBy].toLowerCase();
+//       b[keyToSortBy] = b[keyToSortBy].toLowerCase();
+//     }
+//     if (a[keyToSortBy] > b[keyToSortBy]) {
+//       return direction === "up" ? 1 : -1;
+//     } else if (b[keyToSortBy] > a[keyToSortBy]) {
+//       return direction === "up" ? -1 : 1;
+//     }
+//     return 0;
+//   });
+// }
