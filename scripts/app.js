@@ -15,7 +15,9 @@ function wireHandlers() {
 
 function checkForEmptyTable() {
   if ($("tbody").children().length === 0) {
-    $(".table").toggleClass("d-none");
+    $(".table").addClass("d-none");
+  } else {
+    $(".table").removeClass("d-none");
   }
 }
 
@@ -31,10 +33,10 @@ function appendNewMovie(e) {
 
   let movieData = { title, rating, currentId };
 
-  const movieRowToAppend = addNewRow(movieData);
-
   currentId++;
   moviesArray.push(movieData);
+
+  const movieRowToAppend = addNewRow(movieData);
 
   $("tbody").append(movieRowToAppend);
   $("#new-movie-form").trigger("reset");
@@ -110,22 +112,3 @@ function sortBy(array, keyToSortBy, direction) {
     return 0;
   });
 }
-
-// function sortBy(array, keyToSortBy, direction) {
-//   return array.sort(function (a, b) {
-//     if (keyToSortBy === "rating") {
-//       a[keyToSortBy] = +a[keyToSortBy];
-//       b[keyToSortBy] = +b[keyToSortBy];
-//     }
-//     if (keyToSortBy === "title") {
-//       a[keyToSortBy] = a[keyToSortBy].toLowerCase();
-//       b[keyToSortBy] = b[keyToSortBy].toLowerCase();
-//     }
-//     if (a[keyToSortBy] > b[keyToSortBy]) {
-//       return direction === "up" ? 1 : -1;
-//     } else if (b[keyToSortBy] > a[keyToSortBy]) {
-//       return direction === "up" ? -1 : 1;
-//     }
-//     return 0;
-//   });
-// }
