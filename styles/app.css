@@ -8,6 +8,15 @@ html {
   font-size: 16px;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background: url('/imgs/background.jpg');
+  background-attachment: fixed;
+  color: aliceblue;
+}
+
 /* Header */
 header {
   font-size: 2rem;
@@ -21,11 +30,6 @@ header {
   justify-content: center;
 }
 
-/* For visual layout only */
-.container {
-  border: 1px dashed red;
-}
-
 /* New Movie Form */
 .inline-form {
   display: flex;
@@ -35,9 +39,9 @@ header {
   padding: 1rem;
 }
 
-/* input:invalid {
+input:invalid {
   box-shadow: 0 0 5px 1px red;
-} */
+}
 
 abbr {
   color: red;
@@ -47,78 +51,35 @@ abbr {
 .table-wrapper {
   width: 80%;
   margin: 1.875rem auto;
-  background: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
   padding: 1.25rem;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-  border: 1px dashed green;
 }
 
-table.table {
+table {
   table-layout: fixed;
 }
 
-table.table tr th,
-table.table tr td {
+table tr th,
+table tr td {
   border-color: #e9e9e9;
-}
-
-table.table th i {
-  font-size: 0.8125rem;
-  margin: 0 5px;
-  cursor: pointer;
+  color: aliceblue;
 }
 
 table.table th:nth-child(2) {
   width: 6.25rem;
+  text-align: center;
 }
 
 table.table th:last-child {
   width: 6.25rem;
+  text-align: center;
 }
 
-/* Movie Table last column */
-
-table.table td a {
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 5px;
-  min-width: 1.5rem;
+td:last-child {
+  text-align: center;
 }
 
-table.table td a.add {
-  color: #27c46b;
-}
-
-table.table td a.edit {
-  color: #ffc107;
-}
-
-table.table td a.delete {
-  color: #e34724;
-}
-
-table.table td i {
-  font-size: 1.1875rem;
-}
-
-table.table td a.add i {
-  font-size: 1.5rem;
-  margin-right: -1px;
-  position: relative;
-  top: 3px;
-}
-
-table.table .form-control {
-  height: 2rem;
-  line-height: 2rem;
-  box-shadow: none;
-  border-radius: 2px;
-}
-
-table.table .form-control.error {
-  border-color: #f50000;
-}
-
-table.table td .add {
-  display: none;
+td:nth-child(2) {
+  text-align: center;
 }

@@ -3,6 +3,7 @@ let currentId = 0;
 
 $(document).ready(function () {
   wireHandlers();
+  $("#title").focus();
 });
 
 function wireHandlers() {
@@ -55,7 +56,6 @@ function deleteMovie(e) {
 function sortDirection(e) {
   let direction = $(e.target).hasClass("fa-caret-down") ? "down" : "up";
   let keyToSortBy = $(e.target).attr("data-sort-by");
-  console.log("keyToSortBy: ", keyToSortBy);
   let sortedMovies = sortBy(moviesArray, keyToSortBy, direction);
 
   $("tbody").empty();

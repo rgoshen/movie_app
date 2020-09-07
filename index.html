@@ -40,46 +40,50 @@
   <body>
     <div class="main-heading text-center">
       <h1>My Favorite Movies</h1>
-      <form class="form-inline justify-content-center" id="new-movie-form">
-        <div class="form-group">
-          <label for="title"
-            >Title<abbr title="mandatory" aria-label="required">*</abbr></label
-          >
-          <input
-            type="text"
-            id="title"
-            class="form-control mx-sm-3"
-            required
-            minlength="2"
-          />
-        </div>
+      <div class="container form">
+        <form class="form-inline justify-content-center" id="new-movie-form">
+          <div class="form-group">
+            <label for="title"
+              >Title<abbr title="mandatory" aria-label="required"
+                >*</abbr
+              ></label
+            >
+            <input
+              type="text"
+              id="title"
+              class="form-control mx-sm-3"
+              required
+              minlength="2"
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="rating">Rating</label>
-          <input
-            type="number"
-            min="0"
-            max="10"
-            id="rating"
-            class="form-control mx-sm-3"
-            value="0"
-          />
-        </div>
+          <div class="form-group">
+            <label for="rating">Rating</label>
+            <input
+              type="number"
+              min="0"
+              max="10"
+              id="rating"
+              class="form-control mx-sm-3"
+              value="0"
+            />
+          </div>
 
-        <div class="form-group">
-          <button
-            type="submit"
-            class="btn btn-primary form-control mx-sm-3"
-            id="submit"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-primary form-control mx-sm-3"
+              id="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <br />
     <!-- Movie Table -->
-    <div class="container">
+    <div class="container table">
       <div class="table-wrapper">
         <table class="table table-hover table-bordered table-sm">
           <thead>
