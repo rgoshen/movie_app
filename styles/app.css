@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 html {
   font-size: 16px;
 }
@@ -18,25 +26,26 @@ body {
 }
 
 /* Header */
-header {
-  font-size: 2rem;
+h1 {
+  font-size: 4rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.justify-content-center {
-  justify-content: center;
+.blue {
+  text-shadow: 
+      0 0 5px #7bacff,
+      0 0 10px #7bacff,
+      0 0 20px #7bacff,
+      0 0 40px #7bacff,
+      0 0 80px #7bacff,
+      0 0 90px #7bacff,
+      0 0 100px #7bacff,
+      0 0 150px #7bacff;
 }
 
 /* New Movie Form */
-.inline-form {
-  display: flex;
-  flex-flow: wrap;
-  align-items: center;
-  font-size: 1.25rem;
-  padding: 1rem;
+form {
+  margin: 2rem;
+  font-size: 1.5rem;
 }
 
 input:invalid {
