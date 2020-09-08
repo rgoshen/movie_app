@@ -40,43 +40,40 @@
   <body>
     <div class="main-heading text-center">
       <h1 class="blue">My Favorite Movies</h1>
-      <div class="container form">
-        <form class="form-inline justify-content-center" id="new-movie-form">
-          <div class="form-group">
-            <label for="title"
-              >Title<abbr title="mandatory" aria-label="required"
-                >*</abbr
-              ></label
-            >
-            <input
-              type="text"
-              id="title"
-              class="form-control mx-sm-3"
-              required
-              minlength="2"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="rating">Rating</label>
-            <input
-              type="number"
-              min="0"
-              max="10"
-              id="rating"
-              class="form-control mx-sm-3"
-              value="0"
-            />
-          </div>
-
-          <div class="form-group">
-            <button
-              type="submit"
-              class="btn btn-primary form-control mx-sm-3"
-              id="submit"
-            >
-              Submit
-            </button>
+      <div class="container form justify-content-center">
+        <form id="new-movie-form" class="justify-content-center">
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="title">Title</label>
+              <input
+                type="text"
+                class="form-control mb-2"
+                id="title"
+                placeholder="Movie Title"
+                required
+                minlength="2"
+              />
+            </div>
+            <div class="col-auto">
+              <label for="rating" class="sr-only">Rating</label>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                id="rating"
+                class="form-control mb-2"
+                value="0"
+              />
+            </div>
+            <div class="col-auto">
+              <button
+                type="submit"
+                class="btn btn-primary form-control mb-2"
+                id="submit"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </form>
       </div>

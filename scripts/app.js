@@ -43,6 +43,7 @@ function appendNewMovie(e) {
   $("#title").focus();
 }
 
+// TODO:finish check for duplicates
 function checkForDuplicates() {}
 
 function titleCase(str) {
