@@ -20,7 +20,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background: url('/imgs/background.jpg');
+  background: url('../imgs/background.jpg');
   background-attachment: fixed;
   color: aliceblue;
 }
